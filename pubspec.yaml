@@ -1,0 +1,33 @@
+name: flutter_meetspace
+description: MeetSpace room booking for government staff.
+publish_to: none
+version: 1.0.0+1
+environment:
+  sdk: ^3.12.2
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  http: ^1.6.0
+  flutter_secure_storage: ^11.2.0
+  intl: any
+  timezone: ^0.10.1
+  file_picker: ^13.3.2
+  path_provider: ^2.1.5
+  open_filex: ^4.7.0
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/i18n/
+  fonts:
+    - family: Noto Sans
+      fonts:
+        - asset: assets/fonts/NotoSans.ttf
+    - family: Noto Sans Khmer
+      fonts:
+        - asset: assets/fonts/NotoSansKhmer.ttf
