@@ -63,3 +63,9 @@ Mocked HTTP/widget tests exercise permissions, validation, approval reasons, sch
 ## Verification checkpoint
 
 On 2026-11-05, static analysis and 10 mobile tests passed, including keyboard focus and booking conflict recovery. English/Khmer phone and tablet previews were inspected. The companion backend passed 39 tests. Android APK compilation and live emulator verification remain unconfirmed because native dependency downloads stalled before the work was interrupted. iOS compilation has not been performed.
+
+## Windows Kotlin cache errors
+
+If the project is on D: while the Pub cache is on C:, Kotlin may fail with 'this and base files have different roots' while closing incremental caches. This project disables Kotlin incremental compilation in android/gradle.properties to avoid that failure. Kotlin recompilation may take longer; Flutter hot reload remains available. Gradle is limited to a 3 GB heap and two workers to leave memory for the emulator and IDE. After changing this setting, run flutter clean, flutter pub get, then flutter run.
+
+Verification on 2026-11-12: flutter build apk --debug --target-platform android-x64 --no-pub completed successfully with these settings. This confirms emulator APK compilation; iOS and live application runtime were not tested in this check.
